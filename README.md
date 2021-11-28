@@ -14,6 +14,7 @@
 Realizado con Express y Sequelizer
 Sequelizer es el "ORM", el server actual solo funciona como API. las distintas consultas se pueden hacer mediante distintos protocolos HTTP a la dirección " ` ~/api/app/ `"
 La base de datos esta en la nube y se incluyen las credenciales en este pack
+Deployado [En esta URL de herokuapp](https://blooming-dawn-71825.herokuapp.com/).
 
 ## Consultas al API
 ###  Crear tarea

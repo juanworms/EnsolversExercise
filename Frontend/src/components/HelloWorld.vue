@@ -11,7 +11,7 @@
     <div class="column">
       <p>Edit:
       <input v-model="message" placeholder="New task description" />
-      <button class="badge badge-primary" v-on:click="(message)">
+      <button class="badge badge-primary" v-on:click="add(message)">
         Update
       </button>
       </p>

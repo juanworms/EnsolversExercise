@@ -10,14 +10,14 @@
     </div>
     <div class="column">
       <p>Edit:
-      <input v-model="message" placeholder="New task description" />
-      <button class="badge badge-primary" v-on:click="add(message)">
+      <input v-model="message" placeholder="Edit task description" />
+      <button class="badge badge-primary" >
         Update
       </button>
       </p>
     </div>
     <button class="badge badge-primary mr-2" v-on:click="getAll()">
-        Force Update
+        Force Show all task
       </button>
     <table class="table">
       <thead>
@@ -29,7 +29,7 @@
       </thead>
       <tbody>
         <tr v-for="x in taskList" :key="x">
-          <td>{{ x.realizado }}</td>
+          <td> <span v-on:click="pass">{{ x.realizado }}</span></td>
           <td>{{ x.description }}</td>
           <td>
             <a href="#" v-on:click="pass" value="x.id">Edit </a>

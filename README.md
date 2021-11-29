@@ -68,3 +68,12 @@ Deployado [En esta URL de herokuapp](https://limitless-tundra-13971.herokuapp.co
 * Editar una tarea
 * Adicionales (Carpeta organizativa / login)
 * Mostrar por pantalla todas las tareas al ingresar
+
+#### Notas
+* No se uso nest.js en el Back
+* Las credenciales de la DB estan en los archivos, conozco los riesgos de exponer claves
+* La DB esta en la nube y no se dan instrucciones de como crear una localmente
+* No se incluye ningun Script Bash
+* Los requerimientos de cada aplicacion (Back y Front) no se explicitan porque " `npm install `" en ambos casos setea las dependencias usadas
+* Ambos Deployamientos corresponden a las versiones aqui presentes
+

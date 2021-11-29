@@ -1,12 +1,27 @@
 <template>
   <div class="hello">
-    <button class="badge badge-primary mr-2" @click="getAll()">
-      Force Update
-    </button>
+    <div class="column">
+      <p>Add task:
+      <input v-model="message" placeholder="New task description" />
+      <button class="badge badge-primary" v-on:click="add(message)">
+        Addnew
+      </button>
+      </p>
+    </div>
+    <div class="column">
+      <p>Edit:
+      <input v-model="message" placeholder="New task description" />
+      <button class="badge badge-primary" v-on:click="(message)">
+        Update
+      </button>
+      </p>
+    </div>
+    <button class="badge badge-primary mr-2" v-on:click="getAll()">
+        Force Update
+      </button>
     <table class="table">
       <thead>
         <tr>
-          <th>Internal Id</th>
           <th>Status</th>
           <th>Description</th>
           <th>Edit options</th>
@@ -14,16 +29,16 @@
       </thead>
       <tbody>
         <tr v-for="x in taskList" :key="x">
-          <td>{{ x.id }}</td>
-        <td>{{ x.realizado }}</td>
-        <td>{{ x.description }}</td>
-        <td> <a href="#" @click="pass">Edit </a>
-        <a href="#" @click="pass">Delete</a></td>
-      </tr>
+          <td>{{ x.realizado }}</td>
+          <td>{{ x.description }}</td>
+          <td>
+            <a href="#" v-on:click="pass" value="x.id">Edit </a>
+
+            <a href="#" v-on:click="deletetask(x.id)" value="x.id">Delete</a>
+          </td>
+        </tr>
       </tbody>
     </table>
-
-
   </div>
 </template>
 
@@ -51,7 +66,6 @@ export default {
         .catch((e) => {
           console.log(e);
         });
-      //Aqui manipular otro arreglo para crear la vista dinamica
     },
     //Instant change the "realizado" status
     switchdone(id, task) {
@@ -64,14 +78,32 @@ export default {
         });
     },
     //Delete the task
-    delete(id) {
+    deletetask(id) {
       DataService.delete(id)
         .then((response) => {
           console.log(response.data);
+          this.getAll();
         })
         .catch((e) => {
           console.log(e);
         });
+      
+    },
+    
+    add(message) {
+      var newtask = {
+      realizado: false,
+      description: message,
+    };
+      DataService.create(newtask)
+        .then((response) => {
+          console.log(response.data);
+          this.getAll();
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+      
     },
   },
 };

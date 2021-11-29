@@ -21,13 +21,6 @@ class DataService {
     return http.delete(`/app/${id}`);
   }
 
-  deleteAll() {
-    return http.delete(`/app`);
-  }
-
-  findByTitle(title) {
-    return http.get(`//app?title=${title}`);
-  }
 }
 
 export default new DataService();

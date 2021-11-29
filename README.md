@@ -1,6 +1,8 @@
 # Instrucciones de ejecución
 ## Usando el Script Bash
-//TODO
+
+//NO SUPERADO
+
 ## Manualmente
 ### Backend
  1. navegar a la carpeta del backend
@@ -8,10 +10,12 @@
  3. ejecutar " `node .\index.js `"
 
 ### Frontend
-//TODO
+1. navegar a la carpeta del frontend
+2. ejecutar "`npm install `"
+3. ejecutar " `npm run serve `" (abre el server en modo desarrollo y proporciona la URL de acceso)
 
 # Backend
-Realizado con Express y Sequelizer
+Realizado con Express y Sequelizer.
 Sequelizer es el "ORM", el server actual solo funciona como API. las distintas consultas se pueden hacer mediante distintos protocolos HTTP a la dirección " ` ~/api/app/ `"
 La base de datos esta en la nube y se incluyen las credenciales en este pack
 Deployado [En esta URL de herokuapp](https://blooming-dawn-71825.herokuapp.com/).
@@ -50,4 +54,17 @@ HTTP DELETE a " `~/api/app/:id `" donde " `:id `"  es el identificador de la tar
 
 
 #  Frontend
-//TODO
+Realizado con VUE incluye Bootstrap para que sea "responsive"
+Deployado [En esta URL de herokuapp](https://limitless-tundra-13971.herokuapp.com/)
+
+![captura](chrome_rspEhnDB8h.png)
+![captura2](chrome_SAbkvAPphi.png)
+
+## Desafios superados
+* Agregar una tarea
+* Eliminar una tarea
+ 
+## Desafios No superados
+* Editar una tarea
+* Adicionales (Carpeta organizativa / login)
+* Mostrar por pantalla todas las tareas al ingresar
